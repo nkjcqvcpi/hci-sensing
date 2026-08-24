@@ -2,6 +2,8 @@
 
 Open-source research software for privacy-aware sensing, behavioral inference, and wearable interaction. This repository brings four projects into one reproducible portfolio.
 
+Project website: [HCI Sensing Portfolio](https://sites.google.com/view/hci-sensing-portfolio)
+
 | Project | Focus | Language |
 | --- | --- | --- |
 | [UWB-Fat](uwb-fat/) | UWB signal processing and physics-informed estimation of subcutaneous-fat thickness | Python |
@@ -31,4 +33,3 @@ These projects are research prototypes, not medical devices or safety systems. U
 ## License
 
 Released under the [MIT License](LICENSE).
-
