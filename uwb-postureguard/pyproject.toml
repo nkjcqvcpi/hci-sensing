@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "uwb-postureguard"
+version = "0.1.0"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "joblib>=1.3,<2",
+  "lightgbm>=4.7,<5",
+  "numpy>=1.26,<2.5",
+  "pandas>=2.1,<3",
+  "scikit-learn>=1.4,<2",
+]
+
+[project.scripts]
+uwb-postureguard = "uwb_postureguard.cli:main"
+
+[dependency-groups]
+dev = [
+  "pytest>=8,<9",
+  "ruff>=0.6,<1",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/uwb_postureguard"]
+
+[tool.hatch.build.targets.sdist]
+exclude = ["/legacy-reference"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = ["legacy-reference"]

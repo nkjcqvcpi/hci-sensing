@@ -1,0 +1,15 @@
+{
+  "RecordingSize": 1000,
+  "DCRemoval": false,
+  "RadarSource": {
+    "FPS": "100.0",
+    "PulsePeriod": "12",
+    "MframesPerPulse": "12",
+    "PulsesPerIteration": "35",
+    "IterationscPerFrame": "1024",
+    "TxPower": "4",
+    "InterleavedFrames": "5",
+    "TxChannelSequence": "{0u16, 1u16}",
+    "RxMaskSequence": "{3u16, 3u16}"
+  }
+}

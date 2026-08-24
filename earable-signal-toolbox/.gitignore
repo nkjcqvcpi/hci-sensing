@@ -1,0 +1,10 @@
+*.asv
+*.m~
+*.mat
+*.mlx
+slprj/
+codegen/
+data/raw/
+data/private/
+results/
+.DS_Store

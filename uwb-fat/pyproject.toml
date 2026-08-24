@@ -1,0 +1,37 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "uwb-fat"
+version = "0.1.0"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "h5py>=3.11,<4",
+  "numpy>=1.26,<3",
+  "torch>=2.2,<3",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.2,<9",
+  "ruff>=0.9,<1",
+]
+
+[project.scripts]
+uwb-fat = "uwb_fat.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/uwb_fat"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+

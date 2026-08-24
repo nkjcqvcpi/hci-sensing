@@ -1,0 +1,46 @@
+[acquisition]
+center_frequency_hz = 7.875e9
+sample_rate_hz = 2.100e9
+receive_bandwidth_hz = 460.0e6
+frames_per_recording = 1000
+range_bins = 192
+fft_size = 192
+inband_bins = 43
+window_size = 100
+window_stride = 100
+channel_order = ["tx0_rx0", "tx0_rx1", "tx1_rx0", "tx1_rx1"]
+retained_channel_indices = [1, 2]
+
+[bounds]
+gap_mm = [0.0, 3.0]
+skin_mm = [1.0, 3.0]
+fat_mm = [0.5, 16.5]
+caliper_mm = [3.0, 35.0]
+grid_step_mm = 0.25
+
+[model]
+latent_dim = 64
+hidden_channels = 16
+permittivity_scale = [0.90, 1.10]
+conductivity_scale = [0.80, 1.20]
+interface_residual = [-0.05, 0.05]
+reflection_residual = [-0.10, 0.10]
+final_response_residual = [-0.05, 0.05]
+system_amplitude = [0.01, 5.0]
+system_bandwidth_ghz = [0.15, 1.50]
+system_phase_rad = [-3.141592653589793, 3.141592653589793]
+system_delay_ns = [-5.0, 5.0]
+system_chirp = [-5.0, 5.0]
+
+[training]
+seed = 2026
+epochs = 200
+batch_size = 64
+learning_rate = 1.0e-3
+weight_decay = 1.0e-5
+validation_fraction = 0.20
+patience = 25
+reconstruction_weight = 1.0
+calibration_weight = 1.0
+reconstruction_normalization = "energy"
+

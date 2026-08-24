@@ -1,0 +1,10 @@
+*.asv
+*.m~
+*.mat
+*.wav
+*.flac
+data/raw/
+data/private/
+results/
+codegen/
+.DS_Store

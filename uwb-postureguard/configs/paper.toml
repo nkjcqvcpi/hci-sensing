@@ -1,0 +1,27 @@
+[features]
+window_size = 5
+iqr_factor = 1.5
+drop_average_features = true
+derive_cir_polar = true
+
+[split]
+strategy = "frame_stratified"
+test_size = 0.40
+validation_size = 0.20
+random_state = 42
+
+[model]
+num_leaves = 64
+learning_rate = 0.05
+feature_fraction = 0.90
+max_rounds = 1000
+early_stopping_rounds = 10
+n_jobs = -1
+
+[ood]
+enabled = true
+nu = 0.05
+score_quantile = 0.05
+svd_components = 64
+max_train_samples = 5000
+

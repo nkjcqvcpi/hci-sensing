@@ -1,0 +1,37 @@
+name: Project checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project: [uwb-fat, uwb-postureguard]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: python -m pip install -e ./${{ matrix.project }}
+      - if: matrix.project == 'uwb-fat'
+        run: uwb-fat --help
+      - if: matrix.project == 'uwb-postureguard'
+        run: |
+          uwb-postureguard make-synthetic --output /tmp/posture-smoke
+          uwb-postureguard validate-input --input /tmp/posture-smoke
+
+  matlab:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project: [earable-signal-toolbox, tooth-acoustic-toolbox]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: matlab-actions/setup-matlab@v2
+      - uses: matlab-actions/run-command@v2
+        with:
+          command: cd('${{ matrix.project }}'); startup; run_tests
+
