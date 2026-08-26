@@ -17,11 +17,11 @@ The repository contains source code and non-sensitive configuration files. Human
 
 ## Use
 
-Clone the portfolio and enter the project you want to run:
+Clone the repo and enter the project you want to run:
 
 ```bash
-git clone https://github.com/nkjcqvcpi/hci-sensing-portfolio.git
-cd hci-sensing-portfolio
+git clone https://github.com/nkjcqvcpi/hci-sensing.git
+cd hci-sensing
 ```
 
 The two Python projects use isolated `pyproject.toml` environments. The MATLAB projects run with core MATLAB functions and include lightweight synthetic examples and tests.
