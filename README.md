@@ -1,8 +1,8 @@
-# HCI Sensing Portfolio
+# HCI Sensing
 
 Open-source research software for privacy-aware sensing, behavioral inference, and wearable interaction. This repository brings four projects into one reproducible portfolio.
 
-Project website: [HCI Sensing Portfolio](https://sites.google.com/view/hci-sensing-portfolio)
+Project website: [HCI Sensing](https://sites.google.com/view/hci-sensing)
 
 | Project | Focus | Language |
 | --- | --- | --- |
