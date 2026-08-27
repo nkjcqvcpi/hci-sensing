@@ -4,7 +4,7 @@ The Earable Signal Toolbox processes short multichannel inertial recordings in M
 
 ## Role in HCI Sensing
 
-Within the [HCI Sensing portfolio](../README.md), this toolbox extends identity verification from ambient radio to body-worn inertial signals. Its modality-specific preprocessing feeds a common sequence of enrollment, scoring, and false-accept versus false-reject evaluation.
+Within [HCI Sensing](../README.md), this toolbox extends identity verification from ambient radio to body-worn inertial signals. Its modality-specific preprocessing feeds a common sequence of enrollment, scoring, and false-accept versus false-reject evaluation.
 
 ## Requirements
 

@@ -6,11 +6,11 @@ Human-centered sensing connects physical measurements, computational inference, 
 
 HCI Sensing develops this system view through five radio, inertial, and acoustic projects. UWB-Fat estimates subcutaneous-fat thickness from UWB channel impulse responses with a physics-informed model. UWB-PostureGuard combines temporal posture recognition with out-of-distribution detection. UWBAuth evaluates claimed-identity verification under held-out nuisance conditions. The Earable Signal and Tooth Acoustic toolboxes provide reusable preprocessing, enrollment, template matching, and verification methods for inertial and body-coupled acoustic sensing.
 
-Together, these projects form an experimental foundation for HEARTH, an interoperable ecosystem for privacy-preserving in-home sensing. The portfolio contributes acquisition-aware processing, realistic evaluation protocols, identity analysis, and reusable research artifacts. HEARTH will connect these methods through machine-readable measurement metadata, computable consent, and reproducible privacy and security audits.
+Together, these projects form an experimental foundation for HEARTH, an interoperable ecosystem for privacy-preserving in-home sensing. HCI Sensing contributes acquisition-aware processing, realistic evaluation protocols, identity analysis, and reusable research artifacts. HEARTH will connect these methods through machine-readable measurement metadata, computable consent, and reproducible privacy and security audits.
 
 Project website: [HCI Sensing](https://sites.google.com/view/hci-sensing)
 
-| Project | Role in the portfolio | Modality | Language |
+| Project | Research role | Modality | Language |
 | --- | --- | --- | --- |
 | [UWB-Fat](uwb-fat/) | Physics-informed estimation from UWB channel impulse responses | UWB radio | Python |
 | [UWB-PostureGuard](uwb-postureguard/) | Temporal inference and out-of-distribution detection | UWB radio | Python |
@@ -31,7 +31,7 @@ git clone https://github.com/nkjcqvcpi/hci-sensing.git
 cd hci-sensing
 ```
 
-The three Python projects use isolated `pyproject.toml` environments. The MATLAB projects run with core MATLAB functions and include lightweight synthetic examples and tests.
+The three Python projects use `uv` for dependency resolution, virtual-environment management, and command execution. Enter a Python project and run `uv sync --group dev` to create its environment from `pyproject.toml` and `uv.lock`. The MATLAB projects run with core MATLAB functions and include lightweight synthetic examples and tests.
 
 ## Research governance
 

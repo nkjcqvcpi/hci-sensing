@@ -4,7 +4,7 @@ UWB-Fat processes ultra-wideband channel impulse responses and estimates subcuta
 
 ## Role in HCI Sensing
 
-Within the [HCI Sensing portfolio](../README.md), UWB-Fat provides the physical-estimation layer. It connects a declared UWB acquisition configuration to signal preprocessing, tissue-thickness estimation, recording-level evaluation, and formula-based body-fat conversion.
+Within [HCI Sensing](../README.md), UWB-Fat provides the physical-estimation layer. It connects a declared UWB acquisition configuration to signal preprocessing, tissue-thickness estimation, recording-level evaluation, and formula-based body-fat conversion.
 
 ## Workflow
 
@@ -12,19 +12,18 @@ The pipeline validates a recording manifest, converts raw channel data into obse
 
 ## Requirements
 
+- uv
 - Python 3.11 to 3.13
 - NumPy, h5py, and PyTorch
 
-## Install
+## Setup
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install -e .
-python scripts/run.py --help
+uv sync --group dev
+uv run python scripts/run.py --help
 ```
 
-Use `python scripts/run.py --help` to inspect task arguments. Default parameters are in `configs/default.toml`.
+Default parameters are in `configs/default.toml`.
 
 ## Data and evaluation
 

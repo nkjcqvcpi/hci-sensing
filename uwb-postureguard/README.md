@@ -4,7 +4,7 @@ UWB-PostureGuard performs temporal posture classification from UWB-derived featu
 
 ## Role in HCI Sensing
 
-Within the [HCI Sensing portfolio](../README.md), UWB-PostureGuard provides behavioral inference with an explicit distribution-shift signal. The pipeline reports a posture prediction and an out-of-distribution score derived from the classifier's leaf embedding, separating task accuracy from representation familiarity.
+Within [HCI Sensing](../README.md), UWB-PostureGuard provides behavioral inference with an explicit distribution-shift signal. The pipeline reports a posture prediction and an out-of-distribution score derived from the classifier's leaf embedding, separating task accuracy from representation familiarity.
 
 ## Workflow
 
@@ -12,20 +12,19 @@ The pipeline selects ranging, signal-quality, and channel-impulse-response featu
 
 ## Requirements
 
+- uv
 - Python 3.11 to 3.13
 - NumPy, pandas, scikit-learn, LightGBM, and joblib
 
-## Install and smoke test
+## Setup and smoke test
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install -e .
-python scripts/run.py make-synthetic --output synthetic-data
-python scripts/run.py validate-input --input synthetic-data
+uv sync --group dev
+uv run python scripts/run.py make-synthetic --output synthetic-data
+uv run python scripts/run.py validate-input --input synthetic-data
 ```
 
-Use `python scripts/run.py --help` to inspect task arguments. Default parameters are in `configs/default.toml`.
+Default parameters are in `configs/default.toml`.
 
 ## Data and evaluation
 

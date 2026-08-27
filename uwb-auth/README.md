@@ -4,7 +4,7 @@ UWBAuth is a research pipeline for claimed-identity verification from UWB rangin
 
 ## Role in HCI Sensing
 
-Within the [HCI Sensing portfolio](../README.md), UWBAuth provides identity-sensitive evaluation. It reuses UWB streams from behavioral sensing to measure claimed-identity verification under held-out nuisance conditions and quantify the identity information carried by those streams.
+Within [HCI Sensing](../README.md), UWBAuth provides identity-sensitive evaluation. It reuses UWB streams from behavioral sensing to measure claimed-identity verification under held-out nuisance conditions and quantify the identity information carried by those streams.
 
 ## Approach
 
@@ -28,14 +28,12 @@ The checked-in [aggregate report](reports/condition_cv.json) records fold-level 
 
 ## Reproduce
 
-Requirements: Python 3.11 to 3.13 and the private UWB-Posture data archive.
+Requirements: uv, Python 3.11 to 3.13, and the private UWB-Posture data archive.
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install -e .
+uv sync --group dev
 
-python scripts/run.py experiment \
+uv run python scripts/run.py experiment \
   --data-root /path/to/UWB_raw_data/ranging \
   --labels /path/to/UWB_raw_data/labels.xlsx \
   --config configs/condition_cv.toml \
@@ -47,7 +45,6 @@ The loader selects the experiment, anonymized subject number, posture, and nuisa
 Run the checks with:
 
 ```bash
-uv sync --group dev
 uv run pytest
 uv run ruff check .
 ```
