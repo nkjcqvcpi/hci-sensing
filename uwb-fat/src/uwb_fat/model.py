@@ -70,8 +70,8 @@ class ModelOutput:
 class CorrectionHead(nn.Module):
     """Bounded physical parameters and residual corrections.
 
-    The manuscript omits the exact tensor shapes. This head gives each named correction an
-    explicit bounded representation while keeping the analytic TMM dominant.
+    Each correction has an explicit bounded representation while the analytic TMM remains
+    dominant.
     """
 
     OUTPUTS = 31

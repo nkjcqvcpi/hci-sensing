@@ -1,4 +1,4 @@
-"""Canonical 19-class taxonomy reported in the manuscript."""
+"""Canonical 19-class posture taxonomy."""
 
 from __future__ import annotations
 

@@ -24,4 +24,3 @@ nu = 0.05
 score_quantile = 0.05
 svd_components = 64
 max_train_samples = 5000
-

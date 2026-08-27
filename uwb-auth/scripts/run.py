@@ -1,16 +1,16 @@
-"""Command-line interface for UWBAuth."""
+"""Run the UWBAuth condition-disjoint experiment."""
 
 from __future__ import annotations
 
 import argparse
 import json
 
-from .config import ExperimentConfig
-from .experiment import run_experiment
+from uwb_auth.config import ExperimentConfig
+from uwb_auth.experiment import run_experiment
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="uwb-auth")
+    parser = argparse.ArgumentParser()
     subparsers = parser.add_subparsers(dest="command", required=True)
     experiment = subparsers.add_parser(
         "experiment", help="Run condition-disjoint verification cross-validation"

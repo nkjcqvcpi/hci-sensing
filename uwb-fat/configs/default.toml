@@ -43,4 +43,3 @@ patience = 25
 reconstruction_weight = 1.0
 calibration_weight = 1.0
 reconstruction_normalization = "energy"
-

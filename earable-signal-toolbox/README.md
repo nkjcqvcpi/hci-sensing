@@ -1,6 +1,10 @@
 # Earable Signal Toolbox
 
-MATLAB utilities for short multichannel inertial recordings. The toolbox covers timestamp repair, drift removal, robust normalization, windowed features, template enrollment, and verification scoring.
+The Earable Signal Toolbox processes short multichannel inertial recordings in MATLAB. It covers timestamp repair, drift removal, robust normalization, windowed features, template enrollment, and verification scoring.
+
+## Role in HCI Sensing
+
+Within the [HCI Sensing portfolio](../README.md), this toolbox extends identity verification from ambient radio to body-worn inertial signals. Its modality-specific preprocessing feeds a common sequence of enrollment, scoring, and false-accept versus false-reject evaluation.
 
 ## Requirements
 
@@ -15,7 +19,11 @@ result = run_pipeline;
 run_tests
 ```
 
-The default pipeline generates non-human signals in memory. Recorded sessions can be passed to `earable.preprocess` with `time` and `samples` fields.
+Recorded sessions can be passed to `earable.preprocess` with `time` and `samples` fields.
+
+## Data and evaluation
+
+The default pipeline generates inertial signals in memory and produces an equal-error estimate for a complete computational check. Human-subject studies extend this evaluation to biometric accuracy, longitudinal persistence, imitation resistance, and sensor spoofing.
 
 ## Main package
 
@@ -24,4 +32,3 @@ The `+earable` package contains preprocessing, feature extraction, enrollment, s
 ## License
 
 MIT. See the repository-level `LICENSE` file.
-

@@ -1,4 +1,4 @@
-"""Paper-aligned UWB frame selection, denoising, and temporal features."""
+"""UWB frame selection, denoising, and temporal features."""
 
 from __future__ import annotations
 
@@ -88,7 +88,7 @@ def select_frame_features(
     drop_average_features: bool = True,
     derive_cir_polar: bool = True,
 ) -> tuple[pd.DataFrame, dict[str, list[str]]]:
-    """Select the three feature families specified by the manuscript."""
+    """Select the ranging, signal-quality, and CIR feature families."""
 
     working = derive_cir_polar_features(frame) if derive_cir_polar else frame.copy()
     groups: dict[str, list[str]] = {"ranging": [], "signal_quality": [], "cir": []}

@@ -1,4 +1,4 @@
-"""Command-line interface for training, prediction, validation, and smoke data."""
+"""Run posture training, prediction, validation, and synthetic-data tasks."""
 
 from __future__ import annotations
 
@@ -7,11 +7,11 @@ import json
 from pathlib import Path
 from typing import Any
 
-from .config import TrainingConfig
-from .data import class_counts, load_recordings
-from .features import TemporalFeatureBuilder, select_frame_features
-from .pipeline import PoseGuardBundle, train_from_path
-from .synthetic import write_synthetic_csvs
+from uwb_postureguard.config import TrainingConfig
+from uwb_postureguard.data import class_counts, load_recordings
+from uwb_postureguard.features import TemporalFeatureBuilder, select_frame_features
+from uwb_postureguard.pipeline import PoseGuardBundle, train_from_path
+from uwb_postureguard.synthetic import write_synthetic_csvs
 
 
 def _write_json(path: str | Path, value: dict[str, Any]) -> None:
@@ -29,12 +29,12 @@ def _add_input_arguments(parser: argparse.ArgumentParser, labels: bool = True) -
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="uwb-postureguard")
+    parser = argparse.ArgumentParser()
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     train = subparsers.add_parser("train", help="Train PoseGBDT and leaf-embedding OOD detector")
     _add_input_arguments(train)
-    train.add_argument("--config", help="TOML configuration; built-in paper defaults otherwise")
+    train.add_argument("--config", help="TOML configuration; built-in defaults otherwise")
     train.add_argument("--artifact", required=True, help="Output .joblib model bundle")
     train.add_argument("--report", help="Output JSON report; defaults beside the artifact")
 
@@ -45,7 +45,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     validate = subparsers.add_parser("validate-input", help="Validate schema and feature coverage")
     _add_input_arguments(validate)
-    validate.add_argument("--config", help="TOML configuration; built-in paper defaults otherwise")
+    validate.add_argument("--config", help="TOML configuration; built-in defaults otherwise")
 
     synthetic = subparsers.add_parser(
         "make-synthetic", help="Create optional non-human smoke-test recordings"

@@ -1,20 +1,26 @@
 # HCI Sensing
 
-Open-source research software for privacy-aware sensing, behavioral inference, authentication, and wearable interaction. This repository brings five projects into one reproducible portfolio.
+## Introduction
+
+Human-centered sensing connects physical measurements, computational inference, and responsible data practice. Effective systems document the measurement process, support reproducible signal processing, evaluate realistic variation, and characterize the identity information carried by sensed signals.
+
+HCI Sensing develops this system view through five radio, inertial, and acoustic projects. UWB-Fat estimates subcutaneous-fat thickness from UWB channel impulse responses with a physics-informed model. UWB-PostureGuard combines temporal posture recognition with out-of-distribution detection. UWBAuth evaluates claimed-identity verification under held-out nuisance conditions. The Earable Signal and Tooth Acoustic toolboxes provide reusable preprocessing, enrollment, template matching, and verification methods for inertial and body-coupled acoustic sensing.
+
+Together, these projects form an experimental foundation for HEARTH, an interoperable ecosystem for privacy-preserving in-home sensing. The portfolio contributes acquisition-aware processing, realistic evaluation protocols, identity analysis, and reusable research artifacts. HEARTH will connect these methods through machine-readable measurement metadata, computable consent, and reproducible privacy and security audits.
 
 Project website: [HCI Sensing](https://sites.google.com/view/hci-sensing)
 
-| Project | Focus | Language |
-| --- | --- | --- |
-| [UWB-Fat](uwb-fat/) | UWB signal processing and physics-informed estimation of subcutaneous-fat thickness | Python |
-| [UWB-PostureGuard](uwb-postureguard/) | Temporal posture recognition and out-of-distribution detection from UWB features | Python |
-| [UWBAuth](uwb-auth/) | Condition-disjoint claimed-identity verification from UWB ranging streams | Python |
-| [Earable Signal Toolbox](earable-signal-toolbox/) | Multichannel inertial preprocessing, enrollment, and verification | MATLAB |
-| [Tooth Acoustic Toolbox](tooth-acoustic-toolbox/) | Contact-acoustic event analysis, template matching, and score fusion | MATLAB |
+| Project | Role in the portfolio | Modality | Language |
+| --- | --- | --- | --- |
+| [UWB-Fat](uwb-fat/) | Physics-informed estimation from UWB channel impulse responses | UWB radio | Python |
+| [UWB-PostureGuard](uwb-postureguard/) | Temporal inference and out-of-distribution detection | UWB radio | Python |
+| [UWBAuth](uwb-auth/) | Claimed-identity verification under unseen nuisance conditions | UWB radio | Python |
+| [Earable Signal Toolbox](earable-signal-toolbox/) | Reusable preprocessing, enrollment, and verification | Earable inertial | MATLAB |
+| [Tooth Acoustic Toolbox](tooth-acoustic-toolbox/) | Event representation, template matching, and score fusion | Contact acoustic | MATLAB |
 
-## Repository scope
+## Repository contents
 
-The repository contains source code and non-sensitive configuration files. Human-subject recordings, labels, videos, trained models, manuscripts, and presentation assets are excluded. Each project README documents its requirements and entry point.
+The repository releases source code, non-sensitive configuration files, synthetic examples, tests, and aggregate results. Access-controlled research storage manages study recordings, labels, trained models, and media. Each project README documents its methods, requirements, and run instructions.
 
 ## Use
 
@@ -27,9 +33,9 @@ cd hci-sensing
 
 The three Python projects use isolated `pyproject.toml` environments. The MATLAB projects run with core MATLAB functions and include lightweight synthetic examples and tests.
 
-## Responsible research use
+## Research governance
 
-These projects are research prototypes, not medical devices or safety systems. Users are responsible for ethics approval, informed consent, privacy protection, and validation in their intended setting.
+Each project follows ethics approval, informed consent, privacy protection, and environment-specific validation. Clinical and security studies add domain-specific evaluation for medical, safety, and access-control settings.
 
 ## License
 

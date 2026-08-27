@@ -87,7 +87,7 @@ def _construct(cls: type, raw: dict[str, Any], pair_fields: set[str] | None = No
 
 
 def load_config(path: str | Path) -> ProjectConfig:
-    """Load and validate the reimplementation configuration."""
+    """Load and validate a project configuration."""
     with Path(path).open("rb") as handle:
         raw = tomllib.load(handle)
 
@@ -120,7 +120,7 @@ def load_config(path: str | Path) -> ProjectConfig:
     if acquisition.inband_bins % 2 != 1:
         raise ValueError("inband_bins must be odd so the carrier bin is retained")
     if len(acquisition.retained_channel_indices) != 2:
-        raise ValueError("The manuscript requires exactly two retained cross-channels")
+        raise ValueError("retained_channel_indices must contain exactly two channels")
     if training.reconstruction_normalization not in {"none", "energy"}:
         raise ValueError("reconstruction_normalization must be 'none' or 'energy'")
     if not 0.0 < training.validation_fraction < 1.0:

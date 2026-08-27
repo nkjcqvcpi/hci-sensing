@@ -1,4 +1,4 @@
-"""Command-line entry point for preprocessing, training, and evaluation."""
+"""Run UWB-Fat preprocessing, training, evaluation, and conversion tasks."""
 
 from __future__ import annotations
 
@@ -9,11 +9,11 @@ from pathlib import Path
 
 import numpy as np
 
-from .bodyfat import body_fat_percent, jackson_pollock_density
-from .config import load_config
-from .io import build_observation_archive, read_manifest
-from .metrics import aggregate_by_recording, regression_metrics
-from .training import train_fold
+from uwb_fat.bodyfat import body_fat_percent, jackson_pollock_density
+from uwb_fat.config import load_config
+from uwb_fat.io import build_observation_archive, read_manifest
+from uwb_fat.metrics import aggregate_by_recording, regression_metrics
+from uwb_fat.training import train_fold
 
 
 def _preprocess(args: argparse.Namespace) -> None:
@@ -96,7 +96,7 @@ def _bodyfat(args: argparse.Namespace) -> None:
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="uwb-fat")
+    parser = argparse.ArgumentParser()
     commands = parser.add_subparsers(dest="command", required=True)
 
     validate = commands.add_parser("validate-manifest")

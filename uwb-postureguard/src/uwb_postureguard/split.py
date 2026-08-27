@@ -25,7 +25,7 @@ def _can_stratify(labels: pd.Series, holdout_size: float) -> bool:
 
 
 def make_split(labels: pd.Series, sessions: pd.Series, config: SplitConfig) -> DatasetSplit:
-    """Split temporal samples using the manuscript protocol or disjoint recordings."""
+    """Split temporal samples by frame or by disjoint recording."""
 
     config.validate()
     indices = np.arange(len(labels))

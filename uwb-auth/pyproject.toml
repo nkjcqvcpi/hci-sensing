@@ -14,9 +14,6 @@ dependencies = [
   "scikit-learn>=1.4,<2",
 ]
 
-[project.scripts]
-uwb-auth = "uwb_auth.cli:main"
-
 [dependency-groups]
 dev = [
   "pytest>=8,<9",
