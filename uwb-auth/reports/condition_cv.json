@@ -1,0 +1,780 @@
+{
+  "features": {
+    "collector_moving_averages_used": false,
+    "signals": [
+      "nlos",
+      "distance",
+      "azimuth",
+      "azimuth_fom",
+      "elevation",
+      "elevation_fom",
+      "rssi",
+      "pdoa1",
+      "pdoa2"
+    ],
+    "source": "range_i.csv and range_r.csv",
+    "statistics": [
+      "median",
+      "iqr",
+      "mad",
+      "std",
+      "q10",
+      "q90",
+      "mean_abs_delta"
+    ]
+  },
+  "fold_recording_counts": [
+    {
+      "enrollment": {
+        "subject-02": 39,
+        "subject-03": 39
+      },
+      "test": {
+        "subject-02": 39,
+        "subject-03": 39
+      },
+      "validation": {
+        "subject-02": 39,
+        "subject-03": 39
+      }
+    },
+    {
+      "enrollment": {
+        "subject-02": 39,
+        "subject-03": 39
+      },
+      "test": {
+        "subject-02": 39,
+        "subject-03": 39
+      },
+      "validation": {
+        "subject-02": 39,
+        "subject-03": 39
+      }
+    },
+    {
+      "enrollment": {
+        "subject-02": 39,
+        "subject-03": 39
+      },
+      "test": {
+        "subject-02": 39,
+        "subject-03": 39
+      },
+      "validation": {
+        "subject-02": 39,
+        "subject-03": 39
+      }
+    }
+  ],
+  "generated_at_utc": "2026-08-27T05:14:51.504815+00:00",
+  "limitations": [
+    "Only two subjects share enough matched nuisance conditions for this protocol.",
+    "No second-day ranging data are present, so long-term persistence is not evaluated.",
+    "The study evaluates zero-effort impostors, not replay, relay, or active spoofing.",
+    "Collection environment and body geometry may confound identity."
+  ],
+  "model": {
+    "classifier": "L2-regularized logistic regression",
+    "random_state": 42,
+    "regularization": 1.0,
+    "scaling": "enrollment-fitted robust scaling using 10th and 90th percentiles"
+  },
+  "project": "UWBAuth",
+  "protocol": {
+    "collection_date": "250602",
+    "eligible_postures": [
+      "cross leg (left)",
+      "horizontal leg shaking",
+      "hunched",
+      "lateral lean (left)",
+      "lateral lean (right)",
+      "leaning back",
+      "leaning forward",
+      "lie on table",
+      "rotate the neck",
+      "tense",
+      "upright",
+      "vertical leg shaking left",
+      "vertical leg shaking right"
+    ],
+    "folds": 3,
+    "paired_nuisance_conditions": 9,
+    "partition_policy": "paired nuisance-condition groups are disjoint among enrollment, validation, and test",
+    "subjects": [
+      "subject-02",
+      "subject-03"
+    ],
+    "test_coverage": "each selected recording appears in the test partition exactly once",
+    "threat_model": "claimed-identity verification against zero-effort impostors",
+    "threshold_policy": "per-claimant threshold chosen at validation equal-error point",
+    "unit_of_analysis": "recording"
+  },
+  "software": {
+    "numpy": "2.4.6",
+    "pandas": "2.3.3",
+    "platform": "darwin",
+    "python": "3.12.9",
+    "scikit_learn": "1.9.0"
+  },
+  "status": "preliminary two-subject within-day condition-disjoint feasibility study",
+  "variants": {
+    "dual_link": {
+      "aggregate_test": {
+        "overall": {
+          "identification_accuracy": 0.8205128205128205,
+          "macro_balanced_accuracy": 0.7863247863247863,
+          "macro_false_acceptance_rate": 0.23931623931623933,
+          "macro_false_rejection_rate": 0.18803418803418803,
+          "mean_fold_macro_descriptive_eer": 0.19230769230769232,
+          "mean_fold_macro_roc_auc": 0.8011176857330703,
+          "test_recordings": 234,
+          "verification_decisions": 468
+        },
+        "per_claim": {
+          "subject-02": {
+            "balanced_accuracy": 0.8162393162393162,
+            "false_acceptance_95_percent_ci": [
+              0.07263082821640884,
+              0.1908678344957698
+            ],
+            "false_acceptance_rate": 0.11965811965811966,
+            "false_accepts": 14,
+            "false_rejection_95_percent_ci": [
+              0.1784782855379003,
+              0.3332792549117462
+            ],
+            "false_rejection_rate": 0.24786324786324787,
+            "false_rejects": 29,
+            "genuine_trials": 117,
+            "impostor_trials": 117,
+            "mean_fold_descriptive_eer": 0.19230769230769232,
+            "mean_fold_roc_auc": 0.8029804952881876
+          },
+          "subject-03": {
+            "balanced_accuracy": 0.7564102564102564,
+            "false_acceptance_95_percent_ci": [
+              0.2778104372600545,
+              0.44910479722873087
+            ],
+            "false_acceptance_rate": 0.358974358974359,
+            "false_accepts": 42,
+            "false_rejection_95_percent_ci": [
+              0.07925567450958682,
+              0.2007935800517563
+            ],
+            "false_rejection_rate": 0.1282051282051282,
+            "false_rejects": 15,
+            "genuine_trials": 117,
+            "impostor_trials": 117,
+            "mean_fold_descriptive_eer": 0.19230769230769232,
+            "mean_fold_roc_auc": 0.7992548761779531
+          }
+        }
+      },
+      "feature_count": 126,
+      "folds": [
+        {
+          "calibration": {
+            "subject-02": {
+              "genuine_trials": 39,
+              "impostor_trials": 39,
+              "threshold": 0.5014471191189211,
+              "validation_eer": 0.3589743589743589
+            },
+            "subject-03": {
+              "genuine_trials": 39,
+              "impostor_trials": 39,
+              "threshold": 0.5070482733436111,
+              "validation_eer": 0.3589743589743589
+            }
+          },
+          "feature_count": 126,
+          "test": {
+            "overall": {
+              "identification_accuracy": 0.9871794871794872,
+              "identification_correct": 77,
+              "macro_balanced_accuracy": 0.9871794871794872,
+              "macro_descriptive_eer": 0.012820512820512825,
+              "macro_false_acceptance_rate": 0.01282051282051282,
+              "macro_false_rejection_rate": 0.01282051282051282,
+              "macro_roc_auc": 0.9743589743589743,
+              "test_recordings": 78,
+              "verification_decisions": 156
+            },
+            "per_claim": {
+              "subject-02": {
+                "balanced_accuracy": 0.9871794871794872,
+                "descriptive_eer": 0.01282051282051282,
+                "false_acceptance_rate": 0.02564102564102564,
+                "false_accepts": 1,
+                "false_rejection_rate": 0.0,
+                "false_rejects": 0,
+                "genuine_trials": 39,
+                "impostor_trials": 39,
+                "roc_auc": 0.9743589743589743
+              },
+              "subject-03": {
+                "balanced_accuracy": 0.9871794871794872,
+                "descriptive_eer": 0.01282051282051283,
+                "false_acceptance_rate": 0.0,
+                "false_accepts": 0,
+                "false_rejection_rate": 0.02564102564102564,
+                "false_rejects": 1,
+                "genuine_trials": 39,
+                "impostor_trials": 39,
+                "roc_auc": 0.9743589743589743
+              }
+            }
+          }
+        },
+        {
+          "calibration": {
+            "subject-02": {
+              "genuine_trials": 39,
+              "impostor_trials": 39,
+              "threshold": 0.9845281688334496,
+              "validation_eer": 0.16666666666666666
+            },
+            "subject-03": {
+              "genuine_trials": 39,
+              "impostor_trials": 39,
+              "threshold": 1.662200382554511e-14,
+              "validation_eer": 0.5
+            }
+          },
+          "feature_count": 126,
+          "test": {
+            "overall": {
+              "identification_accuracy": 0.6666666666666666,
+              "identification_correct": 52,
+              "macro_balanced_accuracy": 0.5705128205128205,
+              "macro_descriptive_eer": 0.33333333333333337,
+              "macro_false_acceptance_rate": 0.5128205128205128,
+              "macro_false_rejection_rate": 0.34615384615384615,
+              "macro_roc_auc": 0.6669953977646286,
+              "test_recordings": 78,
+              "verification_decisions": 156
+            },
+            "per_claim": {
+              "subject-02": {
+                "balanced_accuracy": 0.6538461538461539,
+                "descriptive_eer": 0.33333333333333337,
+                "false_acceptance_rate": 0.3333333333333333,
+                "false_accepts": 13,
+                "false_rejection_rate": 0.358974358974359,
+                "false_rejects": 14,
+                "genuine_trials": 39,
+                "impostor_trials": 39,
+                "roc_auc": 0.6725838264299803
+              },
+              "subject-03": {
+                "balanced_accuracy": 0.48717948717948717,
+                "descriptive_eer": 0.33333333333333337,
+                "false_acceptance_rate": 0.6923076923076923,
+                "false_accepts": 27,
+                "false_rejection_rate": 0.3333333333333333,
+                "false_rejects": 13,
+                "genuine_trials": 39,
+                "impostor_trials": 39,
+                "roc_auc": 0.6614069690992768
+              }
+            }
+          }
+        },
+        {
+          "calibration": {
+            "subject-02": {
+              "genuine_trials": 39,
+              "impostor_trials": 39,
+              "threshold": 0.8355498046828632,
+              "validation_eer": 0.0
+            },
+            "subject-03": {
+              "genuine_trials": 39,
+              "impostor_trials": 39,
+              "threshold": 0.3176736251609235,
+              "validation_eer": 0.0
+            }
+          },
+          "feature_count": 126,
+          "test": {
+            "overall": {
+              "identification_accuracy": 0.8076923076923077,
+              "identification_correct": 63,
+              "macro_balanced_accuracy": 0.8012820512820513,
+              "macro_descriptive_eer": 0.23076923076923078,
+              "macro_false_acceptance_rate": 0.19230769230769232,
+              "macro_false_rejection_rate": 0.20512820512820515,
+              "macro_roc_auc": 0.7619986850756082,
+              "test_recordings": 78,
+              "verification_decisions": 156
+            },
+            "per_claim": {
+              "subject-02": {
+                "balanced_accuracy": 0.8076923076923077,
+                "descriptive_eer": 0.23076923076923078,
+                "false_acceptance_rate": 0.0,
+                "false_accepts": 0,
+                "false_rejection_rate": 0.38461538461538464,
+                "false_rejects": 15,
+                "genuine_trials": 39,
+                "impostor_trials": 39,
+                "roc_auc": 0.7619986850756082
+              },
+              "subject-03": {
+                "balanced_accuracy": 0.7948717948717949,
+                "descriptive_eer": 0.23076923076923078,
+                "false_acceptance_rate": 0.38461538461538464,
+                "false_accepts": 15,
+                "false_rejection_rate": 0.02564102564102564,
+                "false_rejects": 1,
+                "genuine_trials": 39,
+                "impostor_trials": 39,
+                "roc_auc": 0.7619986850756082
+              }
+            }
+          }
+        }
+      ]
+    },
+    "initiator_only": {
+      "aggregate_test": {
+        "overall": {
+          "identification_accuracy": 0.8247863247863247,
+          "macro_balanced_accuracy": 0.7606837606837606,
+          "macro_false_acceptance_rate": 0.23504273504273504,
+          "macro_false_rejection_rate": 0.24358974358974358,
+          "mean_fold_macro_descriptive_eer": 0.2051282051282051,
+          "mean_fold_macro_roc_auc": 0.8211702827087443,
+          "test_recordings": 234,
+          "verification_decisions": 468
+        },
+        "per_claim": {
+          "subject-02": {
+            "balanced_accuracy": 0.7606837606837606,
+            "false_acceptance_95_percent_ci": [
+              0.07263082821640884,
+              0.1908678344957698
+            ],
+            "false_acceptance_rate": 0.11965811965811966,
+            "false_accepts": 14,
+            "false_rejection_95_percent_ci": [
+              0.2778104372600545,
+              0.44910479722873087
+            ],
+            "false_rejection_rate": 0.358974358974359,
+            "false_rejects": 42,
+            "genuine_trials": 117,
+            "impostor_trials": 117,
+            "mean_fold_descriptive_eer": 0.2051282051282051,
+            "mean_fold_roc_auc": 0.8211702827087443
+          },
+          "subject-03": {
+            "balanced_accuracy": 0.7606837606837606,
+            "false_acceptance_95_percent_ci": [
+              0.26998261263996287,
+              0.44038202999965786
+            ],
+            "false_acceptance_rate": 0.3504273504273504,
+            "false_accepts": 41,
+            "false_rejection_95_percent_ci": [
+              0.07925567450958682,
+              0.2007935800517563
+            ],
+            "false_rejection_rate": 0.1282051282051282,
+            "false_rejects": 15,
+            "genuine_trials": 117,
+            "impostor_trials": 117,
+            "mean_fold_descriptive_eer": 0.20512820512820515,
+            "mean_fold_roc_auc": 0.8211702827087443
+          }
+        }
+      },
+      "feature_count": 63,
+      "folds": [
+        {
+          "calibration": {
+            "subject-02": {
+              "genuine_trials": 39,
+              "impostor_trials": 39,
+              "threshold": 0.28006340710939626,
+              "validation_eer": 0.3205128205128205
+            },
+            "subject-03": {
+              "genuine_trials": 39,
+              "impostor_trials": 39,
+              "threshold": 0.7199587741028101,
+              "validation_eer": 0.32051282051282054
+            }
+          },
+          "feature_count": 63,
+          "test": {
+            "overall": {
+              "identification_accuracy": 1.0,
+              "identification_correct": 78,
+              "macro_balanced_accuracy": 0.9871794871794872,
+              "macro_descriptive_eer": 0.0,
+              "macro_false_acceptance_rate": 0.01282051282051282,
+              "macro_false_rejection_rate": 0.01282051282051282,
+              "macro_roc_auc": 1.0,
+              "test_recordings": 78,
+              "verification_decisions": 156
+            },
+            "per_claim": {
+              "subject-02": {
+                "balanced_accuracy": 0.9871794871794872,
+                "descriptive_eer": 0.0,
+                "false_acceptance_rate": 0.02564102564102564,
+                "false_accepts": 1,
+                "false_rejection_rate": 0.0,
+                "false_rejects": 0,
+                "genuine_trials": 39,
+                "impostor_trials": 39,
+                "roc_auc": 1.0
+              },
+              "subject-03": {
+                "balanced_accuracy": 0.9871794871794872,
+                "descriptive_eer": 0.0,
+                "false_acceptance_rate": 0.0,
+                "false_accepts": 0,
+                "false_rejection_rate": 0.02564102564102564,
+                "false_rejects": 1,
+                "genuine_trials": 39,
+                "impostor_trials": 39,
+                "roc_auc": 1.0
+              }
+            }
+          }
+        },
+        {
+          "calibration": {
+            "subject-02": {
+              "genuine_trials": 39,
+              "impostor_trials": 39,
+              "threshold": 0.9999079748296248,
+              "validation_eer": 0.4871794871794871
+            },
+            "subject-03": {
+              "genuine_trials": 39,
+              "impostor_trials": 39,
+              "threshold": 0.00037742906865593606,
+              "validation_eer": 0.4871794871794872
+            }
+          },
+          "feature_count": 63,
+          "test": {
+            "overall": {
+              "identification_accuracy": 0.6666666666666666,
+              "identification_correct": 52,
+              "macro_balanced_accuracy": 0.4807692307692307,
+              "macro_descriptive_eer": 0.3205128205128205,
+              "macro_false_acceptance_rate": 0.5128205128205128,
+              "macro_false_rejection_rate": 0.5256410256410257,
+              "macro_roc_auc": 0.643655489809336,
+              "test_recordings": 78,
+              "verification_decisions": 156
+            },
+            "per_claim": {
+              "subject-02": {
+                "balanced_accuracy": 0.47435897435897434,
+                "descriptive_eer": 0.3205128205128205,
+                "false_acceptance_rate": 0.3333333333333333,
+                "false_accepts": 13,
+                "false_rejection_rate": 0.717948717948718,
+                "false_rejects": 28,
+                "genuine_trials": 39,
+                "impostor_trials": 39,
+                "roc_auc": 0.643655489809336
+              },
+              "subject-03": {
+                "balanced_accuracy": 0.48717948717948717,
+                "descriptive_eer": 0.32051282051282054,
+                "false_acceptance_rate": 0.6923076923076923,
+                "false_accepts": 27,
+                "false_rejection_rate": 0.3333333333333333,
+                "false_rejects": 13,
+                "genuine_trials": 39,
+                "impostor_trials": 39,
+                "roc_auc": 0.643655489809336
+              }
+            }
+          }
+        },
+        {
+          "calibration": {
+            "subject-02": {
+              "genuine_trials": 39,
+              "impostor_trials": 39,
+              "threshold": 0.76454254789995,
+              "validation_eer": 0.0
+            },
+            "subject-03": {
+              "genuine_trials": 39,
+              "impostor_trials": 39,
+              "threshold": 0.25200154820296516,
+              "validation_eer": 0.0
+            }
+          },
+          "feature_count": 63,
+          "test": {
+            "overall": {
+              "identification_accuracy": 0.8076923076923077,
+              "identification_correct": 63,
+              "macro_balanced_accuracy": 0.8141025641025641,
+              "macro_descriptive_eer": 0.2948717948717948,
+              "macro_false_acceptance_rate": 0.1794871794871795,
+              "macro_false_rejection_rate": 0.19230769230769232,
+              "macro_roc_auc": 0.8198553583168967,
+              "test_recordings": 78,
+              "verification_decisions": 156
+            },
+            "per_claim": {
+              "subject-02": {
+                "balanced_accuracy": 0.8205128205128205,
+                "descriptive_eer": 0.2948717948717948,
+                "false_acceptance_rate": 0.0,
+                "false_accepts": 0,
+                "false_rejection_rate": 0.358974358974359,
+                "false_rejects": 14,
+                "genuine_trials": 39,
+                "impostor_trials": 39,
+                "roc_auc": 0.8198553583168967
+              },
+              "subject-03": {
+                "balanced_accuracy": 0.8076923076923077,
+                "descriptive_eer": 0.2948717948717949,
+                "false_acceptance_rate": 0.358974358974359,
+                "false_accepts": 14,
+                "false_rejection_rate": 0.02564102564102564,
+                "false_rejects": 1,
+                "genuine_trials": 39,
+                "impostor_trials": 39,
+                "roc_auc": 0.8198553583168967
+              }
+            }
+          }
+        }
+      ]
+    },
+    "responder_only": {
+      "aggregate_test": {
+        "overall": {
+          "identification_accuracy": 0.811965811965812,
+          "macro_balanced_accuracy": 0.8269230769230769,
+          "macro_false_acceptance_rate": 0.1581196581196581,
+          "macro_false_rejection_rate": 0.18803418803418803,
+          "mean_fold_macro_descriptive_eer": 0.2008547008547009,
+          "mean_fold_macro_roc_auc": 0.8472496164803857,
+          "test_recordings": 234,
+          "verification_decisions": 468
+        },
+        "per_claim": {
+          "subject-02": {
+            "balanced_accuracy": 0.8247863247863247,
+            "false_acceptance_95_percent_ci": [
+              0.11346914397542025,
+              0.24933306983174552
+            ],
+            "false_acceptance_rate": 0.17094017094017094,
+            "false_accepts": 20,
+            "false_rejection_95_percent_ci": [
+              0.12049809866850164,
+              0.25885470698782864
+            ],
+            "false_rejection_rate": 0.1794871794871795,
+            "false_rejects": 21,
+            "genuine_trials": 117,
+            "impostor_trials": 117,
+            "mean_fold_descriptive_eer": 0.2008547008547009,
+            "mean_fold_roc_auc": 0.8472496164803857
+          },
+          "subject-03": {
+            "balanced_accuracy": 0.829059829059829,
+            "false_acceptance_95_percent_ci": [
+              0.09273862287355038,
+              0.2204118153861218
+            ],
+            "false_acceptance_rate": 0.1452991452991453,
+            "false_accepts": 17,
+            "false_rejection_95_percent_ci": [
+              0.1347153235282641,
+              0.2777386658263952
+            ],
+            "false_rejection_rate": 0.19658119658119658,
+            "false_rejects": 23,
+            "genuine_trials": 117,
+            "impostor_trials": 117,
+            "mean_fold_descriptive_eer": 0.2008547008547009,
+            "mean_fold_roc_auc": 0.8472496164803857
+          }
+        }
+      },
+      "feature_count": 63,
+      "folds": [
+        {
+          "calibration": {
+            "subject-02": {
+              "genuine_trials": 39,
+              "impostor_trials": 39,
+              "threshold": 0.7395087698997276,
+              "validation_eer": 0.35897435897435903
+            },
+            "subject-03": {
+              "genuine_trials": 39,
+              "impostor_trials": 39,
+              "threshold": 0.2652967090246996,
+              "validation_eer": 0.3589743589743589
+            }
+          },
+          "feature_count": 63,
+          "test": {
+            "overall": {
+              "identification_accuracy": 0.9871794871794872,
+              "identification_correct": 77,
+              "macro_balanced_accuracy": 0.9871794871794872,
+              "macro_descriptive_eer": 0.012820512820512825,
+              "macro_false_acceptance_rate": 0.01282051282051282,
+              "macro_false_rejection_rate": 0.01282051282051282,
+              "macro_roc_auc": 0.9743589743589743,
+              "test_recordings": 78,
+              "verification_decisions": 156
+            },
+            "per_claim": {
+              "subject-02": {
+                "balanced_accuracy": 0.9871794871794872,
+                "descriptive_eer": 0.01282051282051282,
+                "false_acceptance_rate": 0.02564102564102564,
+                "false_accepts": 1,
+                "false_rejection_rate": 0.0,
+                "false_rejects": 0,
+                "genuine_trials": 39,
+                "impostor_trials": 39,
+                "roc_auc": 0.9743589743589743
+              },
+              "subject-03": {
+                "balanced_accuracy": 0.9871794871794872,
+                "descriptive_eer": 0.01282051282051283,
+                "false_acceptance_rate": 0.0,
+                "false_accepts": 0,
+                "false_rejection_rate": 0.02564102564102564,
+                "false_rejects": 1,
+                "genuine_trials": 39,
+                "impostor_trials": 39,
+                "roc_auc": 0.9743589743589743
+              }
+            }
+          }
+        },
+        {
+          "calibration": {
+            "subject-02": {
+              "genuine_trials": 39,
+              "impostor_trials": 39,
+              "threshold": 0.971129022856173,
+              "validation_eer": 0.1282051282051282
+            },
+            "subject-03": {
+              "genuine_trials": 39,
+              "impostor_trials": 39,
+              "threshold": 0.028999303222369422,
+              "validation_eer": 0.1282051282051282
+            }
+          },
+          "feature_count": 63,
+          "test": {
+            "overall": {
+              "identification_accuracy": 0.6666666666666666,
+              "identification_correct": 52,
+              "macro_balanced_accuracy": 0.6923076923076923,
+              "macro_descriptive_eer": 0.41025641025641024,
+              "macro_false_acceptance_rate": 0.3076923076923077,
+              "macro_false_rejection_rate": 0.3076923076923077,
+              "macro_roc_auc": 0.6469428007889546,
+              "test_recordings": 78,
+              "verification_decisions": 156
+            },
+            "per_claim": {
+              "subject-02": {
+                "balanced_accuracy": 0.6923076923076923,
+                "descriptive_eer": 0.41025641025641024,
+                "false_acceptance_rate": 0.46153846153846156,
+                "false_accepts": 18,
+                "false_rejection_rate": 0.15384615384615385,
+                "false_rejects": 6,
+                "genuine_trials": 39,
+                "impostor_trials": 39,
+                "roc_auc": 0.6469428007889546
+              },
+              "subject-03": {
+                "balanced_accuracy": 0.6923076923076923,
+                "descriptive_eer": 0.41025641025641024,
+                "false_acceptance_rate": 0.15384615384615385,
+                "false_accepts": 6,
+                "false_rejection_rate": 0.46153846153846156,
+                "false_rejects": 18,
+                "genuine_trials": 39,
+                "impostor_trials": 39,
+                "roc_auc": 0.6469428007889546
+              }
+            }
+          }
+        },
+        {
+          "calibration": {
+            "subject-02": {
+              "genuine_trials": 39,
+              "impostor_trials": 39,
+              "threshold": 0.7337356490197833,
+              "validation_eer": 0.0
+            },
+            "subject-03": {
+              "genuine_trials": 39,
+              "impostor_trials": 39,
+              "threshold": 0.6379730284144344,
+              "validation_eer": 0.0
+            }
+          },
+          "feature_count": 63,
+          "test": {
+            "overall": {
+              "identification_accuracy": 0.782051282051282,
+              "identification_correct": 61,
+              "macro_balanced_accuracy": 0.8012820512820513,
+              "macro_descriptive_eer": 0.17948717948717952,
+              "macro_false_acceptance_rate": 0.15384615384615385,
+              "macro_false_rejection_rate": 0.2435897435897436,
+              "macro_roc_auc": 0.9204470742932281,
+              "test_recordings": 78,
+              "verification_decisions": 156
+            },
+            "per_claim": {
+              "subject-02": {
+                "balanced_accuracy": 0.7948717948717949,
+                "descriptive_eer": 0.17948717948717952,
+                "false_acceptance_rate": 0.02564102564102564,
+                "false_accepts": 1,
+                "false_rejection_rate": 0.38461538461538464,
+                "false_rejects": 15,
+                "genuine_trials": 39,
+                "impostor_trials": 39,
+                "roc_auc": 0.9204470742932281
+              },
+              "subject-03": {
+                "balanced_accuracy": 0.8076923076923077,
+                "descriptive_eer": 0.17948717948717952,
+                "false_acceptance_rate": 0.28205128205128205,
+                "false_accepts": 11,
+                "false_rejection_rate": 0.10256410256410256,
+                "false_rejects": 4,
+                "genuine_trials": 39,
+                "impostor_trials": 39,
+                "roc_auc": 0.9204470742932281
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

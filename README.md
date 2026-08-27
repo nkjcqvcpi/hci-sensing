@@ -1,6 +1,6 @@
 # HCI Sensing
 
-Open-source research software for privacy-aware sensing, behavioral inference, and wearable interaction. This repository brings four projects into one reproducible portfolio.
+Open-source research software for privacy-aware sensing, behavioral inference, authentication, and wearable interaction. This repository brings five projects into one reproducible portfolio.
 
 Project website: [HCI Sensing](https://sites.google.com/view/hci-sensing)
 
@@ -8,6 +8,7 @@ Project website: [HCI Sensing](https://sites.google.com/view/hci-sensing)
 | --- | --- | --- |
 | [UWB-Fat](uwb-fat/) | UWB signal processing and physics-informed estimation of subcutaneous-fat thickness | Python |
 | [UWB-PostureGuard](uwb-postureguard/) | Temporal posture recognition and out-of-distribution detection from UWB features | Python |
+| [UWBAuth](uwb-auth/) | Condition-disjoint claimed-identity verification from UWB ranging streams | Python |
 | [Earable Signal Toolbox](earable-signal-toolbox/) | Multichannel inertial preprocessing, enrollment, and verification | MATLAB |
 | [Tooth Acoustic Toolbox](tooth-acoustic-toolbox/) | Contact-acoustic event analysis, template matching, and score fusion | MATLAB |
 
@@ -24,7 +25,7 @@ git clone https://github.com/nkjcqvcpi/hci-sensing.git
 cd hci-sensing
 ```
 
-The two Python projects use isolated `pyproject.toml` environments. The MATLAB projects run with core MATLAB functions and include lightweight synthetic examples and tests.
+The three Python projects use isolated `pyproject.toml` environments. The MATLAB projects run with core MATLAB functions and include lightweight synthetic examples and tests.
 
 ## Responsible research use
 

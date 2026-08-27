@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        project: [uwb-fat, uwb-postureguard]
+        project: [uwb-fat, uwb-postureguard, uwb-auth]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -22,6 +22,8 @@ jobs:
         run: |
           uwb-postureguard make-synthetic --output /tmp/posture-smoke
           uwb-postureguard validate-input --input /tmp/posture-smoke
+      - if: matrix.project == 'uwb-auth'
+        run: uwb-auth --help
 
   matlab:
     runs-on: ubuntu-latest
@@ -34,4 +36,3 @@ jobs:
       - uses: matlab-actions/run-command@v2
         with:
           command: cd('${{ matrix.project }}'); startup; run_tests
-

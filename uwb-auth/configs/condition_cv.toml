@@ -1,0 +1,11 @@
+[data]
+sheet = "labels"
+collection_date = "250602"
+subjects = [2, 3]
+
+[protocol]
+folds = 3
+random_state = 42
+
+[model]
+regularization = 1.0
