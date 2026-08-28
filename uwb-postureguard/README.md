@@ -2,9 +2,9 @@
 
 UWB-PostureGuard performs temporal posture classification from UWB-derived features. It combines LightGBM classification with a leaf-embedding out-of-distribution detector.
 
-## Role in HCI Sensing
+## Role in HEARTH
 
-Within [HCI Sensing](../README.md), UWB-PostureGuard provides behavioral inference with an explicit distribution-shift signal. The pipeline reports a posture prediction and an out-of-distribution score derived from the classifier's leaf embedding, separating task accuracy from representation familiarity.
+Within [HEARTH](../README.md), UWB-PostureGuard provides behavioral inference with an explicit distribution-shift signal. The pipeline reports a posture prediction and an out-of-distribution score derived from the classifier's leaf embedding, separating task accuracy from representation familiarity.
 
 ## Workflow
 

@@ -1,14 +1,14 @@
-# HCI Sensing
+# HEARTH
+
+**Home Environment Ambient Radio-frequency Toolkit for Health**
 
 ## Introduction
 
 Human-centered sensing connects physical measurements, computational inference, and responsible data practice. Effective systems document the measurement process, support reproducible signal processing, evaluate realistic variation, and characterize the identity information carried by sensed signals.
 
-HCI Sensing develops this system view through five radio, inertial, and acoustic projects. UWB-Fat estimates subcutaneous-fat thickness from UWB channel impulse responses with a physics-informed model. UWB-PostureGuard combines temporal posture recognition with out-of-distribution detection. UWBAuth evaluates claimed-identity verification under held-out nuisance conditions. The Earable Signal and Tooth Acoustic toolboxes provide reusable preprocessing, enrollment, template matching, and verification methods for inertial and body-coupled acoustic sensing.
+HEARTH develops this system view through five radio, inertial, and acoustic projects. UWB-Fat estimates subcutaneous-fat thickness from UWB channel impulse responses with a physics-informed model. UWB-PostureGuard combines temporal posture recognition with out-of-distribution detection. UWBAuth evaluates claimed-identity verification under held-out nuisance conditions. The Earable Signal and Tooth Acoustic toolboxes provide reusable preprocessing, enrollment, template matching, and verification methods for inertial and body-coupled acoustic sensing.
 
-Together, these projects form an experimental foundation for HEARTH, an interoperable ecosystem for privacy-preserving in-home sensing. HCI Sensing contributes acquisition-aware processing, realistic evaluation protocols, identity analysis, and reusable research artifacts. HEARTH will connect these methods through machine-readable measurement metadata, computable consent, and reproducible privacy and security audits.
-
-Project website: [HCI Sensing](https://sites.google.com/view/hci-sensing)
+Together, these projects form an experimental foundation for HEARTH as an interoperable ecosystem for privacy-preserving in-home sensing. The toolkit contributes acquisition-aware processing, realistic evaluation protocols, identity analysis, and reusable research artifacts. Its research agenda connects these methods through machine-readable measurement metadata, computable consent, and reproducible privacy and security audits.
 
 | Project | Research role | Modality | Language |
 | --- | --- | --- | --- |
@@ -27,8 +27,8 @@ The repository releases source code, non-sensitive configuration files, syntheti
 Clone the repo and enter the project you want to run:
 
 ```bash
-git clone https://github.com/nkjcqvcpi/hci-sensing.git
-cd hci-sensing
+git clone https://github.com/nkjcqvcpi/HEARTH.git
+cd HEARTH
 ```
 
 The three Python projects use `uv` for dependency resolution, virtual-environment management, and command execution. Enter a Python project and run `uv sync --group dev` to create its environment from `pyproject.toml` and `uv.lock`. The MATLAB projects run with core MATLAB functions and include lightweight synthetic examples and tests.

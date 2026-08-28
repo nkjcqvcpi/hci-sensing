@@ -2,9 +2,9 @@
 
 UWBAuth is a research pipeline for claimed-identity verification from UWB ranging streams. It converts each recording into robust temporal summaries, trains an identity model on enrollment conditions, calibrates a claimant-specific threshold on separate conditions, and evaluates on nuisance conditions unseen during either step.
 
-## Role in HCI Sensing
+## Role in HEARTH
 
-Within [HCI Sensing](../README.md), UWBAuth provides identity-sensitive evaluation. It reuses UWB streams from behavioral sensing to measure claimed-identity verification under held-out nuisance conditions and quantify the identity information carried by those streams.
+Within [HEARTH](../README.md), UWBAuth provides identity-sensitive evaluation. It reuses UWB streams from behavioral sensing to measure claimed-identity verification under held-out nuisance conditions and quantify the identity information carried by those streams.
 
 ## Approach
 

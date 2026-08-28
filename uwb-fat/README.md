@@ -2,9 +2,9 @@
 
 UWB-Fat processes ultra-wideband channel impulse responses and estimates subcutaneous-fat thickness with a physics-informed neural model.
 
-## Role in HCI Sensing
+## Role in HEARTH
 
-Within [HCI Sensing](../README.md), UWB-Fat provides the physical-estimation layer. It connects a declared UWB acquisition configuration to signal preprocessing, tissue-thickness estimation, recording-level evaluation, and formula-based body-fat conversion.
+Within [HEARTH](../README.md), UWB-Fat provides the physical-estimation layer. It connects a declared UWB acquisition configuration to signal preprocessing, tissue-thickness estimation, recording-level evaluation, and formula-based body-fat conversion.
 
 ## Workflow
 

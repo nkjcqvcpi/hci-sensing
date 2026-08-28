@@ -2,9 +2,9 @@
 
 The Earable Signal Toolbox processes short multichannel inertial recordings in MATLAB. It covers timestamp repair, drift removal, robust normalization, windowed features, template enrollment, and verification scoring.
 
-## Role in HCI Sensing
+## Role in HEARTH
 
-Within [HCI Sensing](../README.md), this toolbox extends identity verification from ambient radio to body-worn inertial signals. Its modality-specific preprocessing feeds a common sequence of enrollment, scoring, and false-accept versus false-reject evaluation.
+Within [HEARTH](../README.md), this toolbox extends identity verification from ambient radio to body-worn inertial signals. Its modality-specific preprocessing feeds a common sequence of enrollment, scoring, and false-accept versus false-reject evaluation.
 
 ## Requirements
 

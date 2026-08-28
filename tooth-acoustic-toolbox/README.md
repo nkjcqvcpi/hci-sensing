@@ -2,9 +2,9 @@
 
 The Tooth Acoustic Toolbox processes short contact-acoustic events in MATLAB. It provides waveform conditioning, active-region extraction, spectral descriptors, gesture-conditioned templates, score fusion, and threshold analysis.
 
-## Role in HCI Sensing
+## Role in HEARTH
 
-Within [HCI Sensing](../README.md), this toolbox provides body-coupled acoustic authentication. It follows the shared measurement-to-representation-to-verification pipeline through acoustic event localization, spectral description, gesture conditioning, and multi-event score fusion.
+Within [HEARTH](../README.md), this toolbox provides body-coupled acoustic authentication. It follows the shared measurement-to-representation-to-verification pipeline through acoustic event localization, spectral description, gesture conditioning, and multi-event score fusion.
 
 ## Requirements
 
